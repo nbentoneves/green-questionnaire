@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "questionId": "ewqewq-2132131-wdqweq",
+      "question": "How are you?",
+      "answers": [
+        "Fine",
+        "Not Fine"
+      ]
+    },
+    {
+      "questionId": "ewqewq-2132131-qweqweqw",
+      "question": "How are your father?",
+      "answers": [
+        "Good",
+        "Not Good"
+      ]
+    }
+  ]
+}
