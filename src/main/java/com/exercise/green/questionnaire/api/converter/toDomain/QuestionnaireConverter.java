@@ -1,14 +1,12 @@
 package com.exercise.green.questionnaire.api.converter.toDomain;
 
 import com.exercise.green.questionnaire.api.APIQuestionnaire;
-import com.exercise.green.questionnaire.domain.Customer;
 import com.exercise.green.questionnaire.domain.Question;
 import com.exercise.green.questionnaire.domain.Questionnaire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
 import java.util.Set;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class QuestionnaireConverter implements Converter<APIQuestionnaire, Questionnaire> {

@@ -22,6 +22,11 @@ import static com.google.common.base.Preconditions.checkState;
 import static java.util.Objects.requireNonNull;
 import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
+/**
+ * This repository has the responsability to load the questionnaire from a YAML file.
+ * If you want to implement a different repository we should create a factory to select each type of
+ * repository should be create.
+ */
 @Repository
 public class QuestionnaireRepository {
 

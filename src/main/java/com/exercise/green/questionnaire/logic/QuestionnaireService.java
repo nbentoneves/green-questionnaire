@@ -18,6 +18,9 @@ import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.have
 import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.isValid;
 import static com.google.common.collect.Iterables.getOnlyElement;
 
+/**
+ * Using {@link QuestionnaireService} you can get a random questionnaire or answer to the questionnaire
+ */
 @Service
 public class QuestionnaireService {
 
