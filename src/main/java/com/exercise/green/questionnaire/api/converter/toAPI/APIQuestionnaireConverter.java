@@ -10,7 +10,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public final class APIQuestionnaireConverter implements Converter<Questionnaire, APIQuestionnaireResponse> {
+public class APIQuestionnaireConverter implements Converter<Questionnaire, APIQuestionnaireResponse> {
 
     private final APIQuestionConverter questionConverter;
 

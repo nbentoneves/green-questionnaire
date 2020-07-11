@@ -14,8 +14,7 @@ import java.util.Set;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class APIQuestionTest {
 
@@ -48,6 +47,7 @@ public class APIQuestionTest {
         Set<APIQuestion> questions = Sets.newHashSet(question, questionEqual);
 
         assertEquals(1, questions.size());
+        assertFalse(question.equals(null));
 
     }
 

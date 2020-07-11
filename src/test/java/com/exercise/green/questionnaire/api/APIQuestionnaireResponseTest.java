@@ -40,7 +40,8 @@ public class APIQuestionnaireResponseTest {
 
         assertThat(questionnaireResponse.toString(), allOf(
                 containsString("status="),
-                containsString("customerID=")));
+                containsString("customerID="),
+                containsString("questions=")));
 
     }
 

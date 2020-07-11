@@ -5,39 +5,44 @@
     - Yellow bin
     - Blue bin
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: Which of these is not a sustainable energy source?
+  correctAnswer: Fossil fuels
   answers:
-    - Yellow bin
-    - Blue bin
+    - Fossil fuels
+    - Renewable sources
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: Simple measures as decreasing the use of plastics for food packaging contribute to the implementation of eco-friendly actions.
+  correctAnswer: True
   answers:
-    - Yellow bin
-    - Blue bin
+    - True
+    - False
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: "A sustainable diet may include:"
+  correctAnswer: Biological vegetables
   answers:
-    - Yellow bin
-    - Blue bin
+    - Fast food
+    - Biological vegetables
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: Alternative transportation, as using the train or bike instead of a personal car, can help save energy.
+  correctAnswer: True
   answers:
-    - Yellow bin
-    - Blue bin
+    - True
+    - False
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: Putting in practice the 3R’s (Reduce, Reuse, Recycle) can reduce consumption and save CO2.
+  correctAnswer: True
   answers:
-    - Yellow bin
-    - Blue bin
+    - True
+    - False
 
-- question: Where should you dispose water bottles?
-  correctAnswer: Yellow bin
+- question: Chickens are one of the biggest producers of greenhouse gases in the world, which means that changing our diet can decrease carbon footprint.
+  correctAnswer: True
   answers:
-    - Yellow bin
-    - Blue bin
+    - True
+    - False
 
+- question: Teaching the new generation of the importance of sustainability will allow us to have a better future on Earth.
+  correctAnswer: True
+  answers:
+    - True
+    - False

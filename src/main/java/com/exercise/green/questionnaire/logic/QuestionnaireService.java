@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.haveOneAnswerPerQuestion;
+import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.hasOneAnswerPerQuestion;
 import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.isValid;
 import static com.google.common.collect.Iterables.getOnlyElement;
 
@@ -33,13 +33,12 @@ public class QuestionnaireService {
         this.questionnaireRepository = questionnaireRepository;
     }
 
-    public Questionnaire getQuestionnaire() {
+    public Questionnaire getQuestionnaire(Random random) {
 
         Questionnaire questionnaire = new Questionnaire();
         Set<Question> questionsForQuestionnaire = Sets.newHashSet();
         Map<Integer, Question> questions = this.questionnaireRepository.getQuestions();
 
-        Random random = new Random();
         Set<Integer> listOfGenerator = Sets.newHashSet();
 
         while (questionsForQuestionnaire.size() < 4) {
@@ -73,7 +72,7 @@ public class QuestionnaireService {
         Questionnaire questionnaire = new Questionnaire();
         questionnaire.setCustomer(customer);
 
-        if (!haveOneAnswerPerQuestion(questionnaireFromUser)) {
+        if (!hasOneAnswerPerQuestion(questionnaireFromUser)) {
             throw new RuntimeException("The questionnaire not allowed more than one answer per question");
         }
 

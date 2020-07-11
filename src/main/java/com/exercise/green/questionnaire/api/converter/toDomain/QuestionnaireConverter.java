@@ -21,13 +21,16 @@ public class QuestionnaireConverter implements Converter<APIQuestionnaire, Quest
     @Override
     public Questionnaire convert(APIQuestionnaire apiQuestionnaire) {
 
-        Set<Question> questions = apiQuestionnaire.getQuestions()
-                .stream()
-                .map(questionConverter::convert)
-                .collect(Collectors.toSet());
-
         Questionnaire questionnaire = new Questionnaire();
-        questionnaire.setQuestions(questions);
+
+        if (!apiQuestionnaire.getQuestions().isEmpty()) {
+            Set<Question> questions = apiQuestionnaire.getQuestions()
+                    .stream()
+                    .map(questionConverter::convert)
+                    .collect(Collectors.toSet());
+
+            questionnaire.setQuestions(questions);
+        }
 
         return questionnaire;
     }

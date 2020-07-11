@@ -25,7 +25,7 @@ public class QuestionnaireRepositoryTest {
         QuestionnaireRepository questionnaireRepository = new QuestionnaireRepository("questions.yml");
 
         assertNotNull(questionnaireRepository);
-        assertEquals(4, questionnaireRepository.getQuestions().size());
+        assertEquals(8, questionnaireRepository.getQuestions().size());
         assertTrue(questionnaireRepository.getQuestions().containsKey(0));
         assertTrue(questionnaireRepository.getQuestions().containsKey(1));
 

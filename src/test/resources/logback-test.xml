@@ -3,4 +3,5 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="org.springframework" level="OFF"/>
     <logger name="com.exercise.green.questionnaire" level="OFF"/>
+    <logger name="com.exercise.green.questionnaire.api.QuestionnaireController" level="INFO"/>
 </configuration>

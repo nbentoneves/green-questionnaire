@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class APIQuestionnaireRequestTest {
+public class APIQuestionnaireTest {
 
     @Test
     public void testDeserializerQuestionnaireRequest() throws Exception {

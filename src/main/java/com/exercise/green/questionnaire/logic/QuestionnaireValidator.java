@@ -16,7 +16,7 @@ public final class QuestionnaireValidator {
         return questionnaire.getQuestions().size() == 4;
     }
 
-    public static boolean haveOneAnswerPerQuestion(Questionnaire questionnaire) {
+    public static boolean hasOneAnswerPerQuestion(Questionnaire questionnaire) {
 
         for (Question question : questionnaire.getQuestions()) {
             if (question.getAnswers().size() != 1) {

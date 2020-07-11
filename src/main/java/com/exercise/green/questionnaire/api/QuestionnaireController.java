@@ -8,12 +8,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Random;
+
+import static org.springframework.util.CollectionUtils.isEmpty;
 
 @RestController
 public class QuestionnaireController {
@@ -38,7 +41,7 @@ public class QuestionnaireController {
     @GetMapping("/questionnaire/get")
     public APIQuestionnaireResponse getQuestionnaire() {
 
-        Questionnaire questionnaire = this.questionnaireService.getQuestionnaire();
+        Questionnaire questionnaire = this.questionnaireService.getQuestionnaire(new Random());
 
         LOGGER.info("opr=getQuestionnaire, msg='Get questionnaire for the user', questionnaire={}", questionnaire);
 
@@ -53,7 +56,7 @@ public class QuestionnaireController {
 
             Questionnaire questionnaireFromUser = this.questionnaireConverter.convert(questionnaire);
 
-            if (questionnaireFromUser == null || CollectionUtils.isEmpty(questionnaireFromUser.getQuestions())) {
+            if (isEmpty(questionnaireFromUser.getQuestions())) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid request, please check the body");
             }
 
