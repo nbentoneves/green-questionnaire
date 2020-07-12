@@ -19,7 +19,8 @@ import static com.exercise.green.questionnaire.logic.QuestionnaireValidator.isVa
 import static com.google.common.collect.Iterables.getOnlyElement;
 
 /**
- * Using {@link QuestionnaireService} you can get a random questionnaire or answer to the questionnaire
+ * Using {@link QuestionnaireService} you can get a random questionnaire or answer
+ * the questionnaire
  */
 @Service
 public class QuestionnaireService {
@@ -73,7 +74,7 @@ public class QuestionnaireService {
         questionnaire.setCustomer(customer);
 
         if (!hasOneAnswerPerQuestion(questionnaireFromUser)) {
-            throw new RuntimeException("The questionnaire not allowed more than one answer per question");
+            throw new RuntimeException("The questionnaire does not allow more than one answer per question");
         }
 
         if (!isValid(questionnaireFromUser)) {

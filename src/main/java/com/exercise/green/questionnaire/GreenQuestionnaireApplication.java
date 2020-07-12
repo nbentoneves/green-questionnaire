@@ -21,8 +21,8 @@ public class GreenQuestionnaireApplication {
     @Autowired
     private Environment environment;
 
-    @Bean(name = "fileName")
-    public String getFileName() {
+    @Bean(name = "filePath")
+    public String getFilePath() {
         return environment.getProperty("file.question");
     }
 

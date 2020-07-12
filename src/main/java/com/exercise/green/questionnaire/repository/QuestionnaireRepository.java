@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.util.List;
@@ -19,13 +20,12 @@ import java.util.stream.IntStream;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
-import static java.util.Objects.requireNonNull;
 import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
 /**
  * This repository has the responsability to load the questionnaire from a YAML file.
  * If you want to implement a different repository we should create a factory to select each type of
- * repository should be create.
+ * repository that should be create.
  */
 @Repository
 public class QuestionnaireRepository {
@@ -33,18 +33,19 @@ public class QuestionnaireRepository {
     private final static Logger LOGGER = LoggerFactory.getLogger(QuestionnaireRepository.class);
 
     /**
-     * Note: To increase the performance when get random questions
-     * I decided to use Map because I can get a questions using the key (at map the cust is O(1))
+     * Note: To increase the performance when getting a random questions
+     * I decided to use Map because I can get questions using the key (at map the cust is O(1))
      */
     private final Map<Integer, Question> questionsRepository;
 
     @Autowired
-    public QuestionnaireRepository(String fileName) {
+    public QuestionnaireRepository(String filePath) {
 
-        checkArgument(isNotBlank(fileName), "fileName can not be null or empty");
+        checkArgument(isNotBlank(filePath), "filePath can not be null or empty");
 
         try {
-            File file = new File(requireNonNull(getClass().getClassLoader().getResource(fileName), "Can not find the correct file").toURI());
+
+            File file = ResourceUtils.getFile(filePath);
 
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
@@ -61,7 +62,7 @@ public class QuestionnaireRepository {
                     .collect(Collectors.toMap(i -> i, questions::get));
 
         } catch (Exception ex) {
-            LOGGER.warn("opr=create, msg='Something wrong happened'", ex);
+            LOGGER.warn("opr=create, msg='Something wrong happened', filePath={}", filePath, ex);
             throw new RuntimeException("Please fix the QuestionnaireRepository", ex);
         }
 

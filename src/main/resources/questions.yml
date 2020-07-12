@@ -36,7 +36,7 @@
     - False
 
 - question: Chickens are one of the biggest producers of greenhouse gases in the world, which means that changing our diet can decrease carbon footprint.
-  correctAnswer: True
+  correctAnswer: False
   answers:
     - True
     - False

@@ -62,7 +62,7 @@ public class QuestionnaireController {
 
             questionnaireFromUser.getQuestions()
                     .forEach(question ->
-                            LOGGER.info("opr=answerQuestionnaire, msg='Answers for the user', question={}", question));
+                            LOGGER.info("opr=answerQuestionnaire, msg='Answer for the user', question={}", question));
 
             Questionnaire result = this.questionnaireService.answerQuestionnaire(questionnaireFromUser);
 

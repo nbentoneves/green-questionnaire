@@ -11,18 +11,18 @@ public class QuestionnaireRepositoryTest {
 
         assertThrows(IllegalArgumentException.class, () -> new QuestionnaireRepository(null));
 
+
         assertThrows(IllegalArgumentException.class, () -> new QuestionnaireRepository(""));
+        assertThrows(RuntimeException.class, () -> new QuestionnaireRepository("classpath:invalid.yml"));
 
-        assertThrows(RuntimeException.class, () -> new QuestionnaireRepository("invalid.yml"));
-
-        assertThrows(IllegalStateException.class, () -> new QuestionnaireRepository("questionsLessFour.yml"));
+        assertThrows(IllegalStateException.class, () -> new QuestionnaireRepository("classpath:questionsLessFour.yml"));
 
     }
 
     @Test
     public void testLoadValidFile() {
 
-        QuestionnaireRepository questionnaireRepository = new QuestionnaireRepository("questions.yml");
+        QuestionnaireRepository questionnaireRepository = new QuestionnaireRepository("classpath:questions.yml");
 
         assertNotNull(questionnaireRepository);
         assertEquals(8, questionnaireRepository.getQuestions().size());
